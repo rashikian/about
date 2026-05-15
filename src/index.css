@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-bebas: "Bebas Neue", cursive;
+  --font-mono: "DM Mono", monospace;
+  
+  --color-brand-bg: #0a0a0a;
+  --color-brand-surface: #111111;
+  --color-brand-border: #1e1e1e;
+  --color-brand-text: #efefef;
+  --color-brand-muted: #888;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  html::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+  
+  body {
+    @apply font-mono antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bebas;
+  }
+  
+  a {
+    @apply cursor-crosshair transition-colors duration-300;
+  }
+  
+  /* Global Crosshair for interactives */
+  button, input, textarea, a, .interactive {
+    cursor: crosshair !important;
+  }
+}
+
+@layer utilities {
+  .cursor-crosshair {
+    cursor: crosshair;
+  }
+}
